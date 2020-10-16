@@ -1,0 +1,159 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="barang"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['add']">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-sm="2">
+        <ion-list>
+          <!--cpu-->
+          <ion-item-sliding *ngFor="let cp of cpus" #sliding>
+            <ion-item-options side="start">
+              <ion-item-option (click)="editCPU(sliding)" [routerLink]="['cpu/',cp.idCPU]" >
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img [src]="cp.imgCPU">
+              </ion-thumbnail>
+              <ion-list>
+                <ion-label>
+                  {{ cp.merkCPU + ' ' + cp.modelCPU}}
+                </ion-label>
+                <ion-label>
+                  {{ cp.hargaCPU | currency : "Rp." }}
+                </ion-label>
+                <ion-label>
+                  Tersedia: {{ cp.stokCPU}}
+                </ion-label>
+              </ion-list>
+            </ion-item>
+
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="alertCpu(cp.idCPU, sliding)" >
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+
+          <!--gpu-->
+          <ion-item-sliding *ngFor="let gp of gpu" #slg>
+            <ion-item-options side="start">
+              <ion-item-option (click)="editGpu(slg)" [routerLink]="['gpu/', gp.idGPU]">
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+
+
+
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img [src]="gp.imgGPU">
+              </ion-thumbnail>
+              <ion-list>
+                <ion-label>
+                  {{ gp.merkGPU + ' ' + gp.modelGPU}}
+                </ion-label>
+                <ion-label>
+                  {{ gp.hargaGPU | currency : "Rp." }}
+                </ion-label>
+                <ion-label>
+                  Tersedia: {{ gp.stokGPU}}
+                </ion-label>
+              </ion-list>
+            </ion-item>
+
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="alertGpu(gp.idGPU, slg)">
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+
+          <!--mobo-->
+          <ion-item-sliding *ngFor="let mb of mobo" #slm>
+            <ion-item-options side="start">
+              <ion-item-option (click)="editMobo(slm)" [routerLink]="['mobo/', mb.idMOBO]" >
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img [src]="mb.imgMOBO">
+              </ion-thumbnail>
+              <ion-list>
+                <ion-label>
+                  {{ mb.merkMOBO + ' ' + mb.modelMOBO}}
+                </ion-label>
+                <ion-label>
+                  {{ mb.hargaMOBO | currency : "Rp." }}
+                </ion-label>
+                <ion-label>
+                  Tersedia: {{ mb.stokMOBO}}
+                </ion-label>
+              </ion-list>
+            </ion-item>
+
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="alertMobo(mb.idMOBO, slm)">
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+
+          <!--Ram-->
+          <ion-item-sliding *ngFor="let rm of ram" #slr>
+            <ion-item-options side="start">
+              <ion-item-option (click)="editRam(slr)" [routerLink]="['ram/', rm.idRAM]" >
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+
+            <ion-item   >
+              <ion-thumbnail slot="start">
+                <img [src]="rm.imgRAM">
+              </ion-thumbnail>
+              <ion-list>
+                <ion-label>
+                  {{ rm.merkRAM + ' ' + rm.modelRAM}}
+                </ion-label>
+                <ion-label>
+                  {{ rm.hargaRAM | currency : "Rp." }}
+                </ion-label>
+                <ion-label>
+                  Tersedia: {{ rm.stokRAM}}
+                </ion-label>
+              </ion-list>
+            </ion-item>
+
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="alertRam(rm.idRAM, slr)">
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

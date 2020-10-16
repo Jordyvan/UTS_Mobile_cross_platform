@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" offset-sm="4">
+        <ion-row>
+          <ion-col>
+            <ion-img [src]="loadedCpu.imgCPU"  ></ion-img>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col >
+            <h3>{{loadedCpu.merkCPU + ' ' + loadedCpu.modelCPU}}</h3>
+            <h5>{{loadedCpu.hargaCPU | currency : "Rp." }}</h5>
+            <h6>Tersedia : {{loadedCpu.stokCPU}}</h6>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <h6>Base Clock: {{ loadedCpu.baseclockCPU }} GHz</h6>
+              </ion-item>
+              <ion-item>
+                <h6>Boost Clock: {{ loadedCpu.boostclockCPU }} GHz</h6>
+              </ion-item>
+              <ion-item>
+                <h6>Core: {{ loadedCpu.coreCPU }}</h6>
+              </ion-item>
+              <ion-item>
+                <h6>Thread: {{ loadedCpu.threadCPU }}</h6>
+              </ion-item>
+            </ion-list>
+
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" offset-sm="4">
+        <ion-row>
+          <ion-col>
+            <ion-img [src]="loadedMobo.imgMOBO"  ></ion-img>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col >
+            <h3>{{loadedMobo.merkMOBO + ' ' + loadedMobo.modelMOBO}}</h3>
+            <h5>{{loadedMobo.hargaMOBO | currency : "Rp." }}</h5>
+            <h6>Tersedia : {{loadedMobo.stokMOBO}}</h6>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <h6>Chipset: {{ loadedMobo.chipsetMOBO }}</h6>
+              </ion-item>
+              <ion-item>
+                <h6>For Processor: {{ loadedMobo.recomMOBO }}</h6>
+              </ion-item>
+            </ion-list>
+
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

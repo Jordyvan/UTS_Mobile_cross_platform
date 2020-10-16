@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" offset-sm="4">
+        <ion-row>
+          <ion-col>
+            <ion-img [src]="loadedGPU.imgGPU"  ></ion-img>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col >
+            <h3>{{loadedGPU.merkGPU + ' ' + loadedGPU.modelGPU}}</h3>
+            <h5>{{loadedGPU.hargaGPU | currency : "Rp." }}</h5>
+            <h6>Tersedia : {{loadedGPU.stokGPU}}</h6>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
